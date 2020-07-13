@@ -2,6 +2,7 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
+  
   "projects": {
     "EmployeeApp": {
       "projectType": "application",
@@ -24,9 +25,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": ["./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"]
           },
           "configurations": {
             "production": {
@@ -119,6 +122,11 @@
           }
         }
       }
-    }},
-  "defaultProject": "EmployeeApp"
+    }
+  },
+  "defaultProject": "EmployeeApp",
+  "cli": {
+    "analytics": "9da9b2ed-c317-4281-96e4-fd48db115cce"
+  }
+  
 }

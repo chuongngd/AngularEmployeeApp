@@ -1,0 +1,23 @@
+<p>test works!</p>
+
+<table class = "table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col" *ngFor="let column of columns ">{{column}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees; let o = odd; let e = even" [ngClass] = "{oddStyle:o,evenStyle:e}">
+            <td>{{employee.name}}</td>
+            <td>{{employee.age}} </td>
+            <td> {{employee.gender}} </td>
+             <td *ngIf = "isSenior(employee.age); else message" > 
+                 <h4>Senior</h4>
+             </td> 
+             <td>{{salary(employee.age)}}</td>         
+        </tr>
+    </tbody>
+</table>
+<ng-template #message>
+    <h4>Junior</h4>
+</ng-template>

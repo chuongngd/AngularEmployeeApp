@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  changeText: boolean;
+  constructor() {
+     this.changeText = false;
+  }
   title = 'EmployeeApp';
 }

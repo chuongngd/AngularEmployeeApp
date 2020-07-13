@@ -1,0 +1,47 @@
+<p>employee works!</p>
+
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-30 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Employee Dashboard</a>
+    <!-- <input class="form-control form-control-dark w-100" (ngModelChange)="searchchange($event)" [(ngModel)]="searchtxt" type="text" placeholder="Search" aria-label="Search"> -->
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" href="#">Hello Chuong</a>
+      </li>
+    </ul>
+  </nav>
+ 
+ <div class="container-fluid" style="margin-top: 80px;"> 
+<table class = "table table-bordered">
+    <thead><tr>
+        <th scope="col" *ngFor="let column of columns" >{{column}} </th>
+    </tr></thead>
+    <tbody>
+        <tr *ngFor="let user of users; let o = odd; let e = even" (click) = "detailUserOrders(user)" [ngClass] = "{oddStyle:o,evenStyle:e}">
+           <td>{{user.UserId}}</td>
+            <td> {{user.Firstname}} </td>
+            <td>  {{user.Lastname}} </td>
+            <td> {{user.Email}} </td>
+            <li *ngIf = "user.UserId == userClick" >
+              <table class = "table table-bordered">
+              <thead><tr>
+                <th scope="col" *ngFor="let columnorder of columnsorders" >{{columnorder}} </th>
+            </tr></thead>
+            <tbody>
+              <tr *ngFor="let order of orders" >
+              <td>{{order.OrderID}}</td>              
+               <td>{{order.EventID}}</td>
+               <td>{{order.Location}}</td>
+               <td>{{order.OrderDate | date:"MM/dd/yyyy HH:mm" }}</td>
+               <td>{{order.totalPrice | currency}}</td>
+              </tr>
+            </tbody>
+            </table>
+           </li>
+        </tr>
+
+       
+    </tbody>
+</table>
+</div>
+
+
